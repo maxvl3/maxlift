@@ -1,7 +1,7 @@
 {
   "name": "MaxLift",
   "short_name": "MaxLift",
-  "theme_color": "#A3EC3E",
+  "theme_color": "#000000",
   "background_color": "#000000",
   "display": "fullScreen",
   "orientation": "portrait",
