@@ -5,11 +5,7 @@
   gap: 30px;
 
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    .hello {
       h1 {
         font-size: 24px;
         margin-top: 3px;
@@ -17,7 +13,6 @@
       p {
         font-size: 20px;
       }
-    }
 
     .user-icon {
       div {
@@ -63,8 +58,8 @@
 .add-exercise {
     position: fixed;
     z-index: 2;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
   background-color: $green;
   width: 60px;
   height: 60px;
@@ -94,7 +89,7 @@
 
   form{
     background-color: $green;
-    margin: 30px;
+    margin: 20px;
     padding: 20px;
     border-radius: 15px;
     display: flex;

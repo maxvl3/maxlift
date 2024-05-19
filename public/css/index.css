@@ -27,7 +27,7 @@ a {
 
 body {
   background-color: #000000;
-  padding: 30px;
+  padding: 20px;
 }
 
 #home {
@@ -36,16 +36,11 @@ body {
   flex-direction: column;
   gap: 30px;
 }
-#home header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#home header .hello h1 {
+#home header h1 {
   font-size: 24px;
   margin-top: 3px;
 }
-#home header .hello p {
+#home header p {
   font-size: 20px;
 }
 #home header .user-icon div {
@@ -83,8 +78,8 @@ body {
 .add-exercise {
   position: fixed;
   z-index: 2;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   background-color: #A3EC3E;
   width: 60px;
   height: 60px;
@@ -113,7 +108,7 @@ body {
 }
 .exercise-popup form {
   background-color: #A3EC3E;
-  margin: 30px;
+  margin: 20px;
   padding: 20px;
   border-radius: 15px;
   display: flex;
