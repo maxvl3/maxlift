@@ -1,0 +1,53 @@
+<body id="home">
+
+  <header>
+    <div class="hello">
+      <p>Hello Max 💪</p>
+      <h1>Track your progress</h1>
+    </div>
+    <div class="user-icon">
+      <div><i class="fa-solid fa-user"></i></div>
+    </div>
+  </header>
+
+  <ul>
+    {{#each exercises}}
+      <li class="searchable-item">
+        <a href="/exercise/{{this._id}}">
+          <div>
+            <h2>{{this.exerciseName}}</h2>
+            <p>{{this.logs.length}} logs</p>
+          </div>
+          <div>
+            <p>{{this.maxReps}} x {{this.maxWeightLifted}} kg</p>
+          </div>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+
+  <div class="exercise-popup">
+    <form action="/new" method="post">
+      <div class="titleclose">
+        <h2>New exercise</h2>
+        <div class="close-newexercise"><i class="fa-solid fa-xmark"></i></div>
+      </div>
+      <div class="inputcontainer">
+        <input
+          type="text"
+          name="exerciseName"
+          id="exerciseName"
+          placeholder="Exercise name..."
+          autocomplete="off"
+          required
+        />
+      </div>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
+  <div class="add-exercise">
+    <i class="fa-solid fa-plus"></i>
+  </div>
+
+</body>

@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+$black: #000000;
+$grey: #1E1E1E;
+$green: #A3EC3E;
+$white: #ffffff;
+
+*,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+h1, h2{
+  font-weight: bold;
+}
+
+p{
+  font-weight: normal;
+  font-size: 16px;
+}
+
+ul, ol{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: currentcolor;
+}
+
+body{
+  background-color: $black;
+  padding: 30px;
+}
+
+@import "home", "exercise";

@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+*,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+p {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentcolor;
+}
+
+body {
+  background-color: #000000;
+  padding: 30px;
+}
+
+#home {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#home header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home header .hello h1 {
+  font-size: 24px;
+  margin-top: 3px;
+}
+#home header .hello p {
+  font-size: 20px;
+}
+#home header .user-icon div {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+#home header .user-icon div i {
+  font-size: 16px;
+}
+
+#home ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#home ul li a {
+  background-color: #1E1E1E;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+}
+#home ul li h2 {
+  font-size: 18px;
+  margin-bottom: 3px;
+  color: #A3EC3E;
+}
+
+.add-exercise {
+  position: fixed;
+  z-index: 2;
+  bottom: 30px;
+  right: 30px;
+  background-color: #A3EC3E;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.add-exercise i {
+  font-size: 28px;
+  color: #000000;
+}
+
+.exercise-popup {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 3;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+.exercise-popup form {
+  background-color: #A3EC3E;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+.exercise-popup form .titleclose {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.exercise-popup form .titleclose h2 {
+  font-size: 18px;
+}
+.exercise-popup form .titleclose div {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.exercise-popup form .titleclose div i {
+  font-size: 16px;
+}
+.exercise-popup form .inputcontainer {
+  border: solid 2px black;
+  border-width: 0px 0px 2px 0px;
+  padding-bottom: 10px;
+  margin: 0px;
+}
+.exercise-popup form .inputcontainer input {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #000000;
+  padding: 0px;
+  outline: none;
+  margin: 0px;
+}
+.exercise-popup form .inputcontainer input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+.exercise-popup form .inputcontainer input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+.exercise-popup form button {
+  background-color: #000000;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 32px;
+  border-radius: 1000px;
+  color: #ffffff;
+  align-self: center;
+}/*# sourceMappingURL=index.css.map */

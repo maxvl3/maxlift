@@ -1,0 +1,30 @@
+<main id="exercise">
+  <h1>{{exercise.exerciseName}}</h1>
+  <ul>
+    {{#each exercise.logs}}
+      <li class="searchable-item">
+        <div>
+          <p>Weight: {{this.maxWeight}}</p>
+          <p>Reps: {{this.reps}}</p>
+          <p>Date: {{formatDate this.date}}</p> <!-- Gebruik de formatDate helper om de datum te formatteren -->
+          <br>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</main>
+
+<div class="log-popup">
+  <form action="/exercise/{{exercise._id}}/log" method="post">
+    <input
+      type="number"
+      name="maxWeight"
+      placeholder="Max weight (kg)"
+      required
+    />
+    <input type="number" name="reps" placeholder="Reps" required />
+    <div>
+      <button type="submit">Save Log</button>
+    </div>
+  </form>
+</div>
