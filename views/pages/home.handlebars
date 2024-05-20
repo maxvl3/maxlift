@@ -5,6 +5,15 @@
       <h1>Track your progress</h1>
   </header>
 
+    <nav>
+  {{#if user}}
+    <a href="/logout">Logout</a>
+  {{else}}
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+  {{/if}}
+</nav>
+
   <ul>
     {{#each exercises}}
       <li class="searchable-item">
@@ -40,6 +49,7 @@
       <button type="submit">Add</button>
     </form>
   </div>
+
 
   <div class="add-exercise">
     <i class="fa-solid fa-plus"></i>
