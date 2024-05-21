@@ -1,18 +1,18 @@
 <body id="home">
 
   <header>
+    <div class="hello">
       <p>Hello Max 💪</p>
       <h1>Track your progress</h1>
+    </div>
+    <div class="user-icon">
+      <a href="/"><i class="fa-solid fa-user"></i></a>
+    </div>
   </header>
 
-    <nav>
-  {{#if user}}
+  <nav>
     <a href="/logout">Logout</a>
-  {{else}}
-    <a href="/login">Login</a>
-    <a href="/register">Register</a>
-  {{/if}}
-</nav>
+  </nav>
 
   <ul>
     {{#each exercises}}
@@ -49,7 +49,6 @@
       <button type="submit">Add</button>
     </form>
   </div>
-
 
   <div class="add-exercise">
     <i class="fa-solid fa-plus"></i>

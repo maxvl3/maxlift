@@ -6,7 +6,10 @@
   background-color: $black;
 
   header {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .hello {
       h1 {
         font-size: 24px;
         margin-top: 3px;
@@ -14,9 +17,10 @@
       p {
         font-size: 20px;
       }
+    }
 
     .user-icon {
-      div {
+      a {
         background-color: rgba(255, 255, 255, 0.5);
         width: 40px;
         height: 40px;
@@ -57,10 +61,10 @@
 }
 
 .add-exercise {
-    position: fixed;
-    z-index: 2;
-    bottom: 20px;
-    right: 20px;
+  position: fixed;
+  z-index: 2;
+  bottom: 20px;
+  right: 20px;
   background-color: $green;
   width: 60px;
   height: 60px;
@@ -75,7 +79,7 @@
   }
 }
 
-.exercise-popup{
+.exercise-popup {
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -88,7 +92,7 @@
   display: flex;
   align-items: center;
 
-  form{
+  form {
     background-color: $green;
     margin: 20px;
     padding: 20px;
@@ -98,12 +102,12 @@
     gap: 30px;
     width: 100%;
 
-    .titleclose{
+    .titleclose {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      h2{
+      h2 {
         font-size: 18px;
       }
 
@@ -122,13 +126,13 @@
       }
     }
 
-    .inputcontainer{
+    .inputcontainer {
       border: solid 2px black;
       border-width: 0px 0px 2px 0px;
       padding-bottom: 10px;
       margin: 0px;
 
-      input{
+      input {
         background: none;
         border: none;
         font-size: 20px;
@@ -137,13 +141,13 @@
         outline: none;
         margin: 0px;
       }
-      
-      input::placeholder{
+
+      input::placeholder {
         color: rgba(0, 0, 0, 0.5);
       }
     }
 
-    button{
+    button {
       background-color: $black;
       border: none;
       font-size: 16px;

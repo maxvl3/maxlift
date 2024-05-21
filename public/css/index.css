@@ -37,14 +37,19 @@ body {
   gap: 30px;
   background-color: #000000;
 }
-#home header h1 {
+#home header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home header .hello h1 {
   font-size: 24px;
   margin-top: 3px;
 }
-#home header p {
+#home header .hello p {
   font-size: 20px;
 }
-#home header .user-icon div {
+#home header .user-icon a {
   background-color: rgba(255, 255, 255, 0.5);
   width: 40px;
   height: 40px;
@@ -53,7 +58,7 @@ body {
   align-items: center;
   border-radius: 50%;
 }
-#home header .user-icon div i {
+#home header .user-icon a i {
   font-size: 16px;
 }
 
