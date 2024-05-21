@@ -172,4 +172,9 @@ body {
   border-radius: 1000px;
   color: #ffffff;
   align-self: center;
+}
+
+.chart-container {
+  width: 100%;
+  height: 200px;
 }/*# sourceMappingURL=index.css.map */

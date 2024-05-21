@@ -1,5 +1,22 @@
-<main id="exercise">
+<body id="exercise">
   <h1>{{exercise.exerciseName}}</h1>
+
+{{!-- {{#ifGreaterThanOrEqual exercise.logs.length 2}}
+<div class="chart-container">
+    <canvas id="exerciseChart"></canvas>
+</div>
+{{else}}
+<div class="text-icon-container">
+    <p>Voeg meer logs toe om de grafiek te zien</p>
+    <img src="path/to/icon.png" alt="Icon">
+</div>
+{{/ifGreaterThanOrEqual}} --}}
+
+<div class="chart-container">
+    <canvas id="exerciseChart"></canvas>
+</div>
+
+
   <ul>
     {{#each exercise.logs}}
       <li class="searchable-item">
@@ -12,7 +29,6 @@
       </li>
     {{/each}}
   </ul>
-</main>
 
 <div class="log-popup">
   <form action="/exercise/{{exercise._id}}/log" method="post">
@@ -28,3 +44,80 @@
     </div>
   </form>
 </div>
+
+<script>
+// Functie om datums te formatteren
+  function formatDate(dateString) {
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  }
+
+  // Verzamel de data van de oefeningen
+  var exerciseData = {{{json exercise.logs}}};
+
+  // Voeg een leeg object toe aan het begin en het einde van de exerciseData array
+  exerciseData.unshift({ date: '', maxWeight: 0 });
+  exerciseData.push({ date: '', maxWeight: 0 });
+
+  // Maak arrays voor de data en labels van de grafiek
+  var weights = exerciseData.map(log => log.maxWeight);
+  var dates = exerciseData.map(log => formatDate(log.date));
+
+  // Maak de grafiek
+  var ctx = document.getElementById('exerciseChart').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: dates,
+      datasets: [{
+        label: 'Max Weight',
+        data: weights,
+        backgroundColor: '#A3EC3E50',
+        borderColor: '#A3EC3E',
+        borderWidth: 2,
+        tension: 0, // Voeg curves toe aan de lijn
+        fill: 'start',
+        pointRadius: [0, ...weights.slice(1, -1).map(() => 4), 0], // Verberg de punten aan de uiteinden
+            pointHoverRadius: [0, ...weights.slice(1, -1).map(() => 5), 0] // Verberg de hover effecten voor de punten aan de uiteinden
+      }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        display: false, // Verberg de labels van de x-as
+        offset: true // Voeg ruimte toe aan de zijkanten van de grafiek
+      },
+      y: {
+        display: false,
+        beginAtZero: false,
+        suggestedMax: Math.max(...weights) * 1.1 // Voeg 10% extra ruimte toe aan de bovenkant van de grafiek
+      }
+    },
+    plugins: {
+      legend: {
+        display: false // Verberg de legenda
+      },
+      tooltip: {
+        backgroundColor: '#1E1E1E', // Verander de achtergrondkleur van de tooltip
+        titleColor: 'white', // Verander de kleur van de titel van de tooltip
+        bodyColor: 'white', // Verander de kleur van de body van de tooltip
+        displayColors: false, // Verberg de kleurbox in de tooltip
+        callbacks: {
+          title: function(tooltipItems) {
+            // Toon alleen de datum in de titel van de tooltip
+            return dates[tooltipItems[0].dataIndex];
+          },
+          label: function(tooltipItem) {
+            // Toon alleen het gewicht in de body van de tooltip
+            return weights[tooltipItem.dataIndex] + ' kg';
+          }
+        }
+      }
+    }
+  }
+});
+</script>
+
+</body>

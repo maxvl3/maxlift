@@ -19,14 +19,29 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 const hbs = exphbs.create({
-  helpers: handlebarsHelpers,
+  helpers: {
+    ...handlebarsHelpers,
+    json: function (context) {
+      return JSON.stringify(context);
+    }
+  },
 });
+
 hbs.handlebars.registerHelper('formatDate', function(date) {
   const day = date.getDate().toString().padStart(2, '0');
   const month = (date.getMonth() + 1).toString().padStart(2, '0');
   const year = date.getFullYear();
   return `${day}/${month}/${year}`;
 });
+
+// Register the new helper
+hbs.handlebars.registerHelper('ifGreaterThanOrEqual', function(v1, v2, options) {
+  if(v1 >= v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", "./views");
